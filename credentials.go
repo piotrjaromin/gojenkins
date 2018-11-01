@@ -20,12 +20,6 @@ const deleteCredentialURL = baseCredentialsURL + "credential/%s/doDelete"
 const configCredentialURL = baseCredentialsURL + "credential/%s/config.xml"
 const credentialsListURL = baseCredentialsURL + "api/json"
 
-const baseCredentialsURLforJob = "/job/%s/credentials/store/folder/domain/%s/"
-const createCredentialsURLforJob = baseCredentialsURLforJob + "createCredentials"
-const deleteCredentialURLforJob = baseCredentialsURLforJob + "credential/%s/doDelete"
-const configCredentialURLforJob = baseCredentialsURLforJob + "credential/%s/config.xml"
-const credentialsListURLforJob = baseCredentialsURLforJob + "api/json"
-
 var listQuery = map[string]string{
 	"tree": "credentials[id]",
 }
