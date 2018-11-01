@@ -113,7 +113,7 @@ func (cm CredentialsManager) fillURL(url string, params ...interface{}) string {
 }
 
 //List ids if credentials stored inside provided domain
-func (cm CredentialsManager) List(domain string, jobPath string) ([]string, error) {
+func (cm CredentialsManager) List(domain string) ([]string, error) {
 
 	idsResponse := credentialIDs{}
 	ids := make([]string, 0)
@@ -131,7 +131,7 @@ func (cm CredentialsManager) List(domain string, jobPath string) ([]string, erro
 
 //GetSingle searches for credential in given domain with given id, if credential is found
 //it will be parsed as xml to creds parameter(creds must be pointer to struct)
-func (cm CredentialsManager) GetSingle(domain string, jobPath string, id string, creds interface{}) error {
+func (cm CredentialsManager) GetSingle(domain string, id string, creds interface{}) error {
 	str := ""
 	err := cm.handleResponse(cm.J.Requester.Get(cm.fillURL(configCredentialURL, domain, id), &str, map[string]string{}))
 	if err != nil {
